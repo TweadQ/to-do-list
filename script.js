@@ -12,7 +12,14 @@ document.querySelector("#push").onclick = function () {
     document.querySelector("#tasks").innerHTML += `
     <div class="task d-flex justify-content-between align-items-center mb-2">
         <span class="my-0">${elInput}</span>
-        <button class="btn btn-danger">Delete</button>
+        <button class="btn btn-danger delete">Delete</button>
     </div>
     `
+
+    let actionSupprimer = document.querySelectorAll(".delete")
+    for (let i = 0; i < actionSupprimer.length; i++) {
+        actionSupprimer[i].onclick = function () {
+        this.parentNode.remove()
+        }
+    }
 }
